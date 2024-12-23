@@ -1,0 +1,39 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Registered </h2>
+    <table border="1">
+      <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>City</td>
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+       <td>{{ .Id }}</td>
+        <td>{{ .Judul_Task }}</td>
+        <td>{{ .Jenis_Task }}</td>
+        <td>{{ .Desc_Task }}</td>
+        <td>{{ .Tgl_Task }}</td>
+        <td>{{ .Tgl_Selesai }}</td>
+        <td>{{ .Total_Jam }}</td>
+        <td>{{ .Status_Task }}</td>
+        <td>{{ .Created_At }}</td>
+        <td>{{ .Create_Date }}</td>
+        <td>{{ .Update_At }}</td>
+        <td>{{ .Update_Date }}</td>
+        <td><a href="/show?id={{ .Id }}">View</a></td>
+        <td><a href="/edit?id={{ .Id }}">Edit</a></td>
+        <td><a href="/delete?id={{ .Id }}">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

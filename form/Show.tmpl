@@ -1,0 +1,17 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Register {{ .Id }} </h2>
+      <p>Judul_Task: {{ .Judul_Task }}</p>
+      <p>Jenis_Task:  {{ .Jenis_Task }}</p>
+      <p>Desc_Task:  {{ .Desc_Task }}</p>
+      <p>Tgl_Task:  {{ .Tgl_Task }}</p>
+      <p>Tgl_Selesai:  {{ .Tgl_Selesai }}</p>
+      <p>Total_Jam:  {{ .Total_Jam }}</p>
+      <p>Status_Task:  {{ .Status_Task }}</p>
+      <p>Created_At:  {{ .Created_At }}</p>
+      <p>Create_Date:  {{ .Create_Date }}</p>
+      <p>Update_At:  {{ .Update_At }}</p>
+      <p>Update_Date:  {{ .Update_Date }}</p><br /> <a href="/edit?id={{ .Id }}">Edit</a></p>
+  {{ template "Footer" }}
+{{ end }}
